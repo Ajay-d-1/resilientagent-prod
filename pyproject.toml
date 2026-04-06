@@ -1,0 +1,27 @@
+[project]
+name = "resilientagent-prod"
+version = "1.0.0"
+description = "OpenEnv environment for ML model production incident response - autonomous SRE agent"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.104.0",
+    "uvicorn[standard]>=0.24.0",
+    "pydantic>=2.5.0",
+    "openenv-core",
+    "openai>=1.14.0",
+    "python-dotenv>=1.0.1",
+]
+
+[project.optional-dependencies]
+dev = ["requests", "pytest"]
+
+[project.scripts]
+server = "server.app:main"
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[tool.openenv]
+name = "resilientagent-prod"
+version = "1.0.0"
